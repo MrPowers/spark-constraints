@@ -6,9 +6,11 @@ jobs:
         steps:
             - checkout
             - run:
-                name: Test 2.11.8
-                command: mill "spark-constraints[2.11.8].test"
+                name: Test (2.11.8, 2.3.0)
+                command: mill "spark-constraints[2.11.8,2.3.0].test"
             - run:
-                name: Test 2.12.4
-                command: mill "spark-constraints[2.12.4].test"
-
+                name: Test (2.11.8, 2.4.0)
+                command: mill "spark-constraints[2.11.8,2.4.0].test"
+            - run:
+                name: Test (2.12.4, 2.4.0)
+                command: mill "spark-constraints[2.11.8,2.4.0].test"
